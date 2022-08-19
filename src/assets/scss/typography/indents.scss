@@ -1,0 +1,24 @@
+@import "../variables";
+@import "../mixins";
+
+$indentsMap: (
+  m: "margin",
+  mt: "margin-top",
+  mb: "margin-bottom",
+  ml: "margin-left",
+  mr: "margin-right",
+
+  p: "padding",
+  pt: "padding-top",
+  pb: "padding-bottom",
+  pl: "padding-left",
+  pr: "padding-right",
+);
+
+@each $code, $property in $indentsMap {
+  @for $i from 0 through ($maxIndentSize * 2) + 1 {
+    .#{$code}#{str-replace(number-to-string($i / 2), '.', '-')} {
+      #{$property}: #{$i / 2}rem !important;
+    }
+  }
+}

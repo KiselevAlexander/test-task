@@ -1,0 +1,8 @@
+@import "../variables";
+@import "../mixins";
+
+@for $i from $minFontSize through $maxFontSize {
+  .fz#{$i} {
+    font-size: em($i);
+  }
+}
